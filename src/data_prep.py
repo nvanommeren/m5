@@ -46,9 +46,16 @@ class DataPrep:
         sales_df = (sales_df
              .merge(prices_df, on=['wm_yr_wk', 'store_id', 'item_id'], how='left')
              .drop('wm_yr_wk', axis=1)
-             .assign(sell_price=lambda df: df['sell_price'].fillna(0.0)))
+             .assign(sell_price=lambda df: df['sell_price']))
 
-
+        # If the price is None the product is probably not sold on
+        # the given day. Add this as a parameter.
+        sales_df['no_sell_price'] = sales_df['sell_price'].isna()
+        
+        # Fill sell prices with zeros as not all models can handle
+        # null values
+        sales_df['sell_price'] = sales_df['sell_price'].fillna(0.0)
+        
         sales_df = self._parse_snap(sales_df)
 
         return sales_df
