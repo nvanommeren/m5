@@ -2,10 +2,12 @@
 
 Created by: Nikki van Ommeren
 
+This is part of the Kaggle compitition: https://www.kaggle.com/c/m5-forecasting-accuracy/. All relevant information about the data and the data itself can be found in here.
+
 ## Project structure
 
 The project contains the following files:
-* data: folder including the input data
+* data: folder including the input data. Please download the data from the Kaggle m5 competition and directly put it in this folder.
 * models: directory in which the models are saved after running the pipeline.
 * src: source code of the model
 * main.py: entry-point of the model
@@ -20,6 +22,8 @@ It is recommended to first create a virtual environment using:
 ```
 	conda create -n m5_env python=3.7 --file requirements.txt
 ```
+
+Make sure you have the data by downloading it from the kaggle website or using the Kaggle API and place it in the `data` folder.
 
 Please activate the newly created environment an run the project
 from the root folder, usng the command:
