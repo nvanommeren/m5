@@ -1,0 +1,11 @@
+name: m5_env
+dependencies:
+  - python=3.7
+  - pip:
+      - pip==20.0.2
+      - numpy==1.19.5
+      - pandas==1.3.3
+      - scikit-learn==0.24.2
+      - lightgbm==3.2.1
+      - matplotlib==3.4.3
+
